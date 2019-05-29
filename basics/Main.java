@@ -104,7 +104,7 @@ public class Main {
     public static String flipNHeads(int value){
         Random random = new Random();
 
-        int count = 0;
+        int countHeads = 0;
 
         for(int i=0; i < value; i++){
             int num = random.nextInt(2);
@@ -113,16 +113,16 @@ public class Main {
             }
             else {
                 System.out.println("heads");
-                count += 1;
+                countHeads += 1;
             }
         }
 
         String result;
-        if(count == 0){
+        if(countHeads == 0){
             result = "It took " + String.valueOf(value) + " flips to flip 0 heads in a row.";
         }
         else{
-            result = "It took " + String.valueOf(value) + " flips to flip "+  String.valueOf(count) +" heads in a row.";
+            result = "It took " + String.valueOf(value) + " flips to flip "+  String.valueOf(countHeads) +" heads in a row.";
         }
         return result;
 
