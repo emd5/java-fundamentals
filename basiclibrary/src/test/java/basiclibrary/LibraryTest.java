@@ -4,11 +4,72 @@
 package basiclibrary;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test
+    public void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
+
+    @Test
+    public void diceRoll_testWithValueToReturnTrue(){
+        Library diceRoll = new Library();
+
+        int[] expectedOutput = new int[4];
+
+        assertTrue("Test method passing in an input value should work",
+                diceRoll.diceRoll(4).length == expectedOutput.length);
+    }
+
+    @Test
+    public void containsDuplicates_testArrayNoDuplicates(){
+        Library containsDuplicates = new Library();
+
+        int[] inputArray = new int[]{4,5,6,7,8};
+
+        assertTrue("Should return true with array with no duplicates",
+                containsDuplicates.containsDuplicates(inputArray)== true);
+    }
+
+    @Test
+    public void calculateAverage_testMethodReturnsAverageValue(){
+        Library calculateAverage = new Library();
+
+        int[] inputArray = new int[]{1,2,3,4,5}; //15
+
+        assertTrue("The average for the input array is 3",
+                calculateAverage.calculateAverage(inputArray) == 3);
+
+    }
+
+    @Test
+    public void lowestAverage_testMethodReturnLowestAverage(){
+        Library library = new Library();
+
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60}, // 441/7 = 63
+                {57, 65, 65, 70, 72, 65, 51}, // 445/7 = 63.57
+                {55, 54, 60, 53, 59, 57, 61}, // 399/7 = 57
+                {65, 56, 55, 52, 55, 62, 57}  // 402/7 = 57.42
+        };
+
+        int [] expected = {55, 54, 60, 53, 59, 57, 61};
+
+        assertArrayEquals("The returns average array should equal the expected",expected,
+                library.lowestAverage(weeklyMonthTemperatures)  );
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
