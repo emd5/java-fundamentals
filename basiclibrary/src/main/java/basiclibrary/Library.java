@@ -3,8 +3,101 @@
  */
 package basiclibrary;
 
+import java.util.Arrays;
+import java.util.Random;
+
+/**
+ * A classLibrary that contains the methods for Arrays, Loops, Imports, ArrayLists lab.
+ */
 public class Library {
+
     public boolean someLibraryMethod() {
         return true;
+    }
+
+    /**
+     * A method called that returns true or false depending on whether the array contains
+     * duplicate values.
+     *
+     * @param rolls the rolls
+     * @return the int [ ]
+     */
+    public int[] diceRoll(int rolls) {
+        int[] arr = new int[rolls];
+        Random rand = new Random();
+
+        for (int i = 0; i < rolls; i++) {
+            arr[i] = rand.nextInt(6);
+        }
+        return arr;
+    }
+
+    /**
+     * A method that returns true if array contains duplicates otherwise false.
+     *
+     * @param inputArray the input array
+     * @return the boolean
+     */
+    public boolean containsDuplicates(int[] inputArray) {
+        for (int i = 0; i < inputArray.length; i++) {
+            for (int j = 0; j < inputArray.length; i++) {
+                if (i != j) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * A method that accepts an array of integers and calculates and returns the average of all the values in the array.
+     *
+     * @param inputArray the input array
+     */
+    public int calculateAverage(int[] inputArray) {
+
+        int temp = 0;
+        for (int i = 0; i < inputArray.length; i++) {
+            temp += inputArray[i];
+        }
+
+        int average = temp / inputArray.length;
+
+        return average;
+    }
+
+
+    /**
+     * Calculate the average value for each array and return the array with the lowest average, using the
+     * calculateAverage method above
+     *
+     * @param arrays the arrays
+     * @return int[] array with lowest average
+     */
+    public int[] lowestAverage(int[][] inputArray) {
+
+        //calculate the first array and store as a value to compare later.
+        int calculatedAverageArray = calculateAverage(inputArray[0]);
+        int avg = 0;
+        int lowest = 0;
+
+        // Loops through each inner array
+        for (int i = 0; i < inputArray.length; i++) {
+            System.out.println(Arrays.toString(inputArray[i]));
+            avg = calculateAverage(inputArray[i]);
+
+            System.out.println(avg);
+
+            if (avg < calculatedAverageArray) {
+                System.out.println("CAA " +calculatedAverageArray);
+                calculatedAverageArray = avg;
+                System.out.println("lowest: " + lowest + "| " + i);
+                lowest = i;
+
+            }
+        }
+
+        return inputArray[lowest];
     }
 }
