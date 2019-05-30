@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         Linter lint = new Linter();
+
         lint.linter("src/main/resources/gates.js");
         lint.linter("src/main/resources/empty.js");
         lint.linter("src/main/resources/few.js");
