@@ -11,6 +11,22 @@ but not an array mixed with integers and strings.
 
 ## Feature Task
 
+### 5/30/19
+
+***Analyzing Weather Data***
+
+Use the October Seattle weather data above. Iterate through all of the data to find the min and max values. 
+Use a HashSet of type Integer to keep track of all the unique temperatures seen. Finally, iterate from the min 
+temp to the max temp and print out any temperature not seen during the month.
+
+***Tallying Election***
+
+Write a function called tally that accepts a List of Strings representing votes and returns one string to 
+show what got the most votes.
+
+
+### 5/29/19
+
 ***Rolling Dice***
 
 Write a method called roll that accepts an integer n and rolls a six-sided dice n times. 
