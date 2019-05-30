@@ -3,25 +3,16 @@
  */
 package linter;
 
-import java.nio.file.Path;
-
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Linter lint = new Linter();
+        lint.linter("src/main/resources/gates.js");
+        lint.linter("src/main/resources/empty.js");
+        lint.linter("src/main/resources/few.js");
+        lint.linter("src/main/resources/many.js");
+        lint.linter("src/main/resources/noerror.js");
     }
 
-    /**
-     * This method prints an error whenever it finds a line that doesn’t end in a semi-colon.
-     *
-     * @param path the path
-     * @return the string
-     */
-    public String linter(Path path){
-
-        return "";
-    }
 }
