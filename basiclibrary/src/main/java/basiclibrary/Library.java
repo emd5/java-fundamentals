@@ -3,8 +3,7 @@
  */
 package basiclibrary;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 /**
  * A classLibrary that contains the methods for Arrays, Loops, Imports, ArrayLists lab.
@@ -72,7 +71,7 @@ public class Library {
      * Calculate the average value for each array and return the array with the lowest average, using the
      * calculateAverage method above
      *
-     * @param arrays the arrays
+     * @param array of arrays
      * @return int[] array with lowest average
      */
     public int[] lowestAverage(int[][] inputArray) {
@@ -82,17 +81,16 @@ public class Library {
         int avg = 0;
         int lowest = 0;
 
+        if(inputArray.length ==0){
+            throw new IllegalArgumentException("Cannot find lowest average of an empty array");
+        }
+
         // Loops through each inner array
         for (int i = 0; i < inputArray.length; i++) {
-            System.out.println(Arrays.toString(inputArray[i]));
             avg = calculateAverage(inputArray[i]);
 
-            System.out.println(avg);
-
             if (avg < calculatedAverageArray) {
-                System.out.println("CAA " +calculatedAverageArray);
                 calculatedAverageArray = avg;
-                System.out.println("lowest: " + lowest + "| " + i);
                 lowest = i;
 
             }
@@ -100,4 +98,60 @@ public class Library {
 
         return inputArray[lowest];
     }
+
+    /**
+     * This method accepts an array and prints the min, max, and within the range print out not seen values.
+     *
+     * @param inputArray the input array
+     */
+    public void weatherData(int[][] inputArray){
+
+        HashSet<Integer> hashSet = new HashSet<>();
+
+        for(int i = 0; i < inputArray.length ; i++){
+            for (int item : inputArray[i]) {
+                hashSet.add(item);
+            }
+        }
+
+        System.out.println("The min temp is " + Collections.min(hashSet));
+        System.out.println("The max temp is " + Collections.max(hashSet));
+
+        int min = Collections.min(hashSet);
+        int max = Collections.max(hashSet);
+
+        for(int i = min; i< max; i++) {
+            if (!hashSet.contains(i)) {
+                System.out.println("Never Seen: " + i);
+            }
+        }
+    }
+
+    /**
+     * This method accepts a list of strings and returns one string to show what got the most votes
+     *
+     * @return the string that represents the most votes.
+     */
+    public String tally(List<String> list){
+        int max = 0;
+        String mostVotes = "";
+
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        for(String element: list){
+            hashMap.put(element, 0);
+        }
+
+        for(String element: list){
+            if(hashMap.get(element) > max){
+                max = hashMap.get(element) + 1;
+                mostVotes = element;
+            }
+            else{
+                hashMap.put(element, hashMap.get(element) + 1);
+            }
+        }
+        return mostVotes;
+    }
+
 }
