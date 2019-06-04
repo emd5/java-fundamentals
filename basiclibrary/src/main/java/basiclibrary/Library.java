@@ -10,10 +10,6 @@ import java.util.*;
  */
 public class Library {
 
-    public boolean someLibraryMethod() {
-        return true;
-    }
-
     /**
      * A method called that returns true or false depending on whether the array contains
      * duplicate values.
@@ -133,15 +129,14 @@ public class Library {
      * @return the string that represents the most votes.
      */
     public String tally(List<String> list){
-        int max = 0;
-        String mostVotes = "";
-
         HashMap<String, Integer> hashMap = new HashMap<>();
 
         for(String element: list){
             hashMap.put(element, 0);
         }
 
+        int max = 0;
+        String mostVotes = "";
         for(String element: list){
             if(hashMap.get(element) > max){
                 max = hashMap.get(element) + 1;
@@ -149,8 +144,10 @@ public class Library {
             }
             else{
                 hashMap.put(element, hashMap.get(element) + 1);
+
             }
         }
+
         return mostVotes;
     }
 

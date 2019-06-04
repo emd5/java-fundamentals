@@ -25,11 +25,6 @@ public class LibraryTest {
         System.setErr(new PrintStream(errContent));
     }
 
-    @Test
-    public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
 
     @Test
     public void diceRoll_testWithValueToReturnTrue(){

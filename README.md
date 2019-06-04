@@ -11,6 +11,9 @@ Liz Mahoney
 - [Basic Library:](./basiclibrary) Arrays, For Loops, Imports, ArrayLists
 - [Linter:](./linter) Maps, File I/O, and Testing
 
+## Week 2
+- [Inheritance](./inheritance) Inheritance
+
 
 
 
