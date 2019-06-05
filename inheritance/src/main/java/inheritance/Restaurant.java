@@ -54,7 +54,7 @@ public class Restaurant{
      * @param newReview
      */
     public void addReview(Review newReview){
-        if(this.reviews == null){
+        if(this.reviews == null || this.reviews.contains(newReview)){
             List<Review> reviewList  = new LinkedList<>();
             reviewList.add(newReview);
             this.reviews = reviewList;
