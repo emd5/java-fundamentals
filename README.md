@@ -13,7 +13,7 @@ Liz Mahoney
 
 ## Week 2
 
-- [Linter:](./inheritance) Inheritance vs. Composition
+- [Inheritance/Interface:](./inheritance) Inheritance vs. Composition
 
 
 

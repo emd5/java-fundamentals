@@ -6,11 +6,14 @@ import static org.junit.Assert.*;
 
 public class TheaterTest {
 
+    // Test the theater constructor.
     @Test
     public void testTheaterConstructorPassInName(){
         Theater theater = new Theater("Sleepless In Seattle");
         assertTrue("Hashmap should have one key", theater.getMovieReviewList().containsKey("Sleepless In Seattle"));
     }
+
+    // Test add one movie to the list
     @Test
     public void testAddOneMovie() {
         Theater theater = new Theater("Sleepless In Seattle");
@@ -18,6 +21,7 @@ public class TheaterTest {
 
     }
 
+    // Test add multiple movies to the list
     @Test
     public void testAddMultipleMovies() {
         Theater theater = new Theater("Sleepless In Seattle");
@@ -28,7 +32,7 @@ public class TheaterTest {
         assertEquals("Should return the movie list has 2", 4, theater.getMovies().size());
     }
 
-
+    // Test remove one movie from the list, should return 0
     @Test
     public void testRemoveMovie() {
         Theater theater = new Theater("Sleepless In Seattle");
@@ -40,7 +44,7 @@ public class TheaterTest {
 
     }
 
-    //Test add one review, should return size of
+    //Test add one review, should return size of 1
     @Test
     public void testAddOneReview(){
         Theater theater = new Theater("Sleepless In Seattle");
@@ -50,6 +54,7 @@ public class TheaterTest {
         assertEquals("Should return one review",1, theater.getReviews().size());
     }
 
+    // Test add multiple reviews, should return size of 3
     @Test
     public  void testAddMultipleReviews(){
         Theater theater = new Theater("Sleepless In Seattle");
