@@ -8,6 +8,29 @@ This lab is to create classes and interfaces to represent reviews of restaurants
 
 ## Feature Task
 
+### 6/05/19
+- [x] The users want shops! Create a Shop class; a Shop should have a name, description, and number of dollar signs.
+    - [x] Implement a constructor for a Shop.
+    - [x] Implement a reasonable toString method for Shops.
+    - [x] Add tests for the basics of your Shop class.
+- [x] The users also want to review shops!
+    - [x] It would be great if a Review could be about either a Shop or a Restaurant. Choose an implementation, and make this possible.
+    - [x] Ensure that your Shop class has an instance method to add a review about that shop, and that it works just as well as the Restaurant instance method with the same purpose.
+    - [x] Write tests for this functionality.
+- [x] The users want theaters! Create a Theater class; a Theater should have a name and all of the movies currently showing there. (Strings are fine for the movies; no need to create another class.)
+    - [x] Implement a constructor for a Theater.
+    - [x] Write addMovie and removeMovie instance methods that allow the theater to update which movies are being shown.
+    - [x] Implement a reasonable toString method for Theaters.
+    - [x] Test your Theater functionality.
+- [x] Review all the things!
+    - [x] Ensure that your Theater is just as reviewable as your Restaurant and your Shop.
+    - [x] Test this functionality.
+- [x] Users are frustrated: they like having a body, an author, and a number of stars, but when they’re reviewing a Theater, they also want to specify which movie they saw.
+    - [x] Some reviews should now have a String movie instance variable, to hold which movie that reviewer is referencing.
+    - [x] Make sure that someone reviewing a Restaurant or a Shop doesn’t have to include which movie they saw!
+    - [x] It’s also okay if someone doesn’t want to include the movie they saw when they’re reviewing a theater (maybe they just went in for the popcorn).
+    - [x] Add testing for any new functionality you’ve created.
+
 ### 6/04/19
 
 - [x] Create a class to represent a Restaurant. Each Restaurant should have a name, a number of stars betweeen 0 and 5, 

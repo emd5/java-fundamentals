@@ -1,6 +1,6 @@
 package inheritance;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -13,6 +13,9 @@ public class Restaurant{
     private String price;
     private List<Review> reviews;
 
+    private enum DollarPrice{
+        $, $$, $$$, $$$$;
+    }
 
     /**
      * The constructor method of the Restaurant class that accepts name and price.
@@ -52,7 +55,7 @@ public class Restaurant{
      */
     public void addReview(Review newReview){
         if(this.reviews == null){
-            List<Review> reviewList  = new ArrayList<>();
+            List<Review> reviewList  = new LinkedList<>();
             reviewList.add(newReview);
             this.reviews = reviewList;
         }
@@ -67,12 +70,14 @@ public class Restaurant{
      */
     public void getAverageStars(){
         int total = 0;
-
         for(Review review: reviews){
             total += review.getStars();
         }
-
         this.stars = total/reviews.size();
+    }
+
+    public List<Review> getReviews(){
+       return this.reviews;
     }
 
     /**
