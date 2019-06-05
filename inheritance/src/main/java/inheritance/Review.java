@@ -3,7 +3,7 @@ package inheritance;
 /**
  * The Review class with its instance methods
  */
-public class Review {
+public class Review{
 
     private String description;
     private String author;

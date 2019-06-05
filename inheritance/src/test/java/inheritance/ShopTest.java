@@ -24,9 +24,16 @@ public class ShopTest {
         assertEquals("Shop price invalid", "Shop price cannot be null", shop.getShopPrice());
     }
 
+    // Test a constructor with invalid price
+    @Test(expected = IllegalArgumentException.class)
+    public void testShopConstructorInvalidPriceInput(){
+        Shop shop = new Shop("Macy's", "Department Store", "");
+        assertEquals("Shop price invalid", "Shop price cannot be null", shop.getShopPrice());
+    }
+
     // Test add one shop review where the shop review list size is 1
     @Test
-    public void testAddOneReview() {
+    public void testAddOneReview(){
         Shop shop = new Shop("Express", "Dressy Clothes", "$$$");
         shop.addReview(new Review("Love Express", "Liz", 3));
 
@@ -45,7 +52,7 @@ public class ShopTest {
 
     // Test the toString method that contains the shopDescription
     @Test
-    public void testToStringInShopClass() {
+    public void testToStringInShopClass(){
         Shop shop = new Shop("JCPenney", "Another Department Store", "$$" );
 
         assertTrue((shop.toString()).contains("Another Department Store"));
