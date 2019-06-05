@@ -81,24 +81,5 @@ public class Theater implements IReview{
                 ", movieReviewList=" + movieReviewList +
                 '}';
     }
-//    public static void main(String[] args) {
-//        Theater theater = new Theater("Seattle");
-//        System.out.println(theater.getName());
-//
-//        System.out.println(theater.getMovies());
-//
-//        System.out.println(theater.getMovieReviewList().size());
-//        System.out.println(theater.getMovieReviewList().toString());
-//
-////        theater.removeMovie("S"); //this works
-//        System.out.println(theater.getMovieReviewList().size());
-//
-//        theater.addReview(new Review("Seattle was cool", "Liz", 2));
-//
-//        System.out.println(theater.getReviews());
-//
-//
-//
-//
-//    }
+
 }

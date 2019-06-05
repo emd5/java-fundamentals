@@ -40,13 +40,25 @@ public class TheaterTest {
 
     }
 
+    //Test add one review, should return size of
     @Test
-    public void testAddOneReview() {
+    public void testAddOneReview(){
+        Theater theater = new Theater("Sleepless In Seattle");
 
+        theater.addReview(new Review("Sleepless In Seattle was a great movie", "Liz", 3));
+
+        assertEquals("Should return one review",1, theater.getReviews().size());
     }
 
     @Test
     public  void testAddMultipleReviews(){
+        Theater theater = new Theater("Sleepless In Seattle");
+
+        theater.addReview(new Review("Sleepless In Seattle was a great movie", "Liz", 4));
+        theater.addReview(new Review("Sleepless In Seattle not so great", "Bob", 1));
+        theater.addReview(new Review("I cried", "Alice", 5));
+
+        assertEquals("Should return one review",3, theater.getReviews().size());
 
     }
 }

@@ -3,7 +3,7 @@ package inheritance;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Shop {
+public class Shop implements IReview{
 
     private String shopName;
     private String shopDescription;
@@ -58,6 +58,7 @@ public class Shop {
         return this.shopPrice;
     }
 
+    @Override
     public void addReview(Review newReview){
         if(this.reviewShopList == null){
             List<Review> reviewList  = new LinkedList<>();
