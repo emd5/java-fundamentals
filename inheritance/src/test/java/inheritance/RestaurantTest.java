@@ -28,18 +28,33 @@ public class RestaurantTest {
 
     //Test the restaurant constructors by passing into the constructor
     @Test
-    public void testRestaurantConstructorWithStarValue(){
+    public void testAddReviewSizeIsValid(){
         Restaurant restaurant = new Restaurant("Din Tai Fung","$$");
 
         Review lizReview = new Review("DTF is bomb", "Liz", 4);
+        Review lizSecondReview = new Review("DTF is ok", "Liz", 2);
 
         restaurant.addReview(lizReview);
+        restaurant.addReview(lizSecondReview);
 
-        String expected = "Restaurant{name='Din Tai Fung', price='$$'}";
+        assertEquals( "Size of reviewList should be 1",1, restaurant.getReviews().size());
+        assertEquals( "Size of reviewList should be 2",2, restaurant.getReviews().size());
+    }
 
-        assertEquals("Should return Din Tai Fung, $$", expected, restaurant.toString());
-        assertEquals("Review{description='DTF is bomb', author='Liz', stars=4}", lizReview.toString());
+    @Test
+    public void testGetReviews(){
+        Restaurant restaurant = new Restaurant("McDonalds","$");
 
+        Review newReview = new Review("This place was dirty", "Nick", 1);
+        Review newReview2 = new Review("Fries are always crisp", "Sebastian", 4);
+
+        restaurant.addReview(newReview);
+        restaurant.addReview(newReview2);
+
+        String expected = "[Review{description='This place was dirty', author='Nick', stars=1}, " +
+                "Review{description='Fries are always crisp', author='Sebastian', stars=4}]";
+
+        assertEquals("Returns a list of reviews", expected, restaurant.getReviews().toString() );
     }
 
 }

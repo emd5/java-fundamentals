@@ -21,4 +21,23 @@ public class ReviewTest {
         Review review = new Review("Cool Restaurant","Liz", 2);
         assertTrue(review.toString().contains("Liz"));
     }
+
+    //Test add a review and see 2nd review contains a word in the review list.
+    @Test
+    public void testEntireToStringInReviewClass(){
+        Restaurant restaurant = new Restaurant("El Gaucho", "$$$$");
+        Review review = new Review("Cool Restaurant","Liz", 2);
+        Review review2 = new Review("Very dark and omnious","Liz", 3);
+
+        restaurant.addReview(review);
+        assertTrue(review.toString().contains("Liz"));
+        assertFalse(restaurant.getReviews().toString().contains("omnious"));
+
+        restaurant.addReview(review2);
+        assertTrue(restaurant.getReviews().toString().contains("omnious"));
+
+        assertEquals("Should return new review in index 0", restaurant.getReviews().get(0), review);
+        assertEquals("Should return review 2 in index 1", restaurant.getReviews().get(1), review2);
+    }
+
 }
